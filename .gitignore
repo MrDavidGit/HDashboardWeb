@@ -2,6 +2,9 @@
 .env
 .env.*
 
+# No ignora
+!.env.example
+
 # Ignorar entornos virtuales
 .venv/
 env/
