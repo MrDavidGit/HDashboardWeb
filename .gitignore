@@ -1,0 +1,13 @@
+# Ignorar archivos de configuración sensibles
+.env
+.env.*
+
+# Ignorar entornos virtuales
+.venv/
+env/
+venv/
+
+# Ignorar archivos de logs y temporales
+*.log
+*.tmp
+.history/

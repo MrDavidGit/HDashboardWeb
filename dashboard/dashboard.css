@@ -1,0 +1,684 @@
+:root {
+
+    --movimiento-link: translateY(10px);
+    --box-shadow-link: -8px 6px rgba(0, 0, 0, 0.5);
+    --azul_oscuro: #738CFF;
+    --azul_claro: #8FD3F4;
+    --morado: #AD7DC9;
+    --amarillo: #fbc02d;
+    --fondo-botones: rgba(44, 44, 84, 0.75);
+    --radio-bordes: 15px;
+    --verde: #7CB342;
+    
+    --press-effect: scale(0.90);
+
+    --imagen-fondo-url: url('../assets/login_background.jpg');
+}
+
+body {
+
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    background-color: rgba(64, 64, 64, 1);
+    display: flex;
+    background: var(--imagen-fondo-url) no-repeat center center fixed;
+    background-size: cover;
+
+    /*
+    background: url('assets/login_background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    */
+    margin: 0; /* Quita el margen que hay por defecto */
+}
+
+#banner {
+
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(64, 64, 64, 0.5));
+
+    width: 100%;
+    height: 70px;
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Hace que padding y borde se incluyan en el ancho y alto */
+
+
+}
+
+#banner:after {
+
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    top: 100%;
+
+
+    background: linear-gradient(
+        to right, 
+        rgba(115, 140, 255, 1),
+        rgba(143, 211, 244, 1),
+        rgb(198, 115, 247)
+    );
+
+}
+
+#account {
+
+    position: absolute;
+    width: 35px;
+    height: 50%;            /* Asegura que ocupe todo el alto del contenedor padre */
+    border: 2px ridge var(--morado);
+    border-radius: 50%;
+
+    left: 95.7%;
+
+    background-color: var(--azul_oscuro);
+
+
+    align-self: center;
+    
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+
+    z-index: 3;
+}
+
+/* ICONO del usuario */
+.bx.bxs-user {
+
+    position: absolute;
+    
+    color: black;
+    
+
+}
+
+#username {
+
+    position: absolute;
+
+    width: 60px;
+    height: 60%;
+
+    background-color: var(--fondo-botones);
+    border: 2px var(--morado);
+    border-style: solid;
+        border-radius: var(--radio-bordes);
+    
+    right: 98%;
+    
+    z-index: 2;
+
+}
+
+#ul1 {
+
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between; /* Distribuye los enlaces de manera equitativa */
+
+    width: 70%; /* Asegura que ocupe todo el ancho del banner */
+
+}
+
+
+.links {
+
+    margin-left: 80px;
+    margin-top: 10px;
+
+    border: 2px solid var(--morado);
+        border-radius: var(--radio-bordes);
+    
+    padding: 8px;
+
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    background-color: var(--fondo-botones);
+    transition: transform 0.3s ease; /* Animación de 0.3s al cambiar la posición */
+
+    /* Nivel de capa visual */
+    z-index: 0;
+
+    list-style-type: none;
+    display: inline-block;
+}
+
+/* Cambia como se ven los enlaces */
+#ul1 a {
+
+    color: var(--azul_claro);
+    text-decoration: none;
+}
+
+/* Estilo de los enlaces en el banner al poner el raton, dado por el hover */
+li a:hover{
+
+    transform: var(--movimiento-link);
+    box-shadow: var(--box-shadow-link);
+
+}
+
+footer {
+
+    position: absolute;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(64, 64, 64, 0.5));
+    height: 50px;
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+
+    bottom: 0px;
+    z-index: 9;
+}
+
+footer::before {
+
+    /* Pilla todo el tamaño del contenedor padre footer para colocarse bien */
+    display: block;
+    /* Ocupa todo el tamaño del footer padre*/
+    width: 100%;
+
+    content: "© 2024 Hylarion | Todos los derechos reservados.";
+    color: var(--amarillo);
+    /*text-shadow: -10px 2px 2px var(--azul_oscuro);*/
+    text-align: center;
+
+
+
+}
+
+
+
+footer::after {
+
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 1px;
+    
+    position: absolute;
+    bottom: 100%;
+
+    background: linear-gradient(
+        to right, 
+        rgba(173, 125, 201, 1),
+        rgba(143, 211, 244, 1),
+        rgba(115, 140, 255, 1)
+    );
+    
+
+}
+
+
+
+/* TIEMPO DE CARGA */
+/* Solo se vera en el futuro si la función de debug mode esta activada */
+
+#loadTime {
+
+    position: absolute;
+
+    left: 6px;
+
+    height: 25px;
+    width: 95px;
+
+    bottom: 1.2%;
+
+    background-color: var(--fondo-botones);
+
+
+    border: 2px solid var(--morado);
+    border-radius: 16px;
+
+    z-index: 10;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+
+    font-size: 14px;
+
+}
+
+.bx.bx-loader-circle {
+
+    position: relative;
+    
+    color: #83de22;
+    bottom: 1px;
+
+}
+
+#loadTime p {
+
+    position: relative;
+    color: var(--amarillo);
+
+    margin-left: 5px;
+}
+
+
+
+
+
+/* Primer icono */
+#link1 i {
+
+    color: #83de22;
+    position: relative;
+    top: 1px;
+
+}
+
+/* Segundo icono */
+#link2 i {
+
+    color: var(--amarillo);
+    position: relative;
+    top: 1px;
+
+}
+
+/* Tercer icono */
+#link3 i {
+
+    color: #555555;
+    position: relative;
+    top: 1px;
+
+}
+
+/* Cuarto icono */
+#link4 i {
+
+    color: #de2242;
+    position: relative;
+    top: 2px;
+
+}
+
+
+/* Esta a modo chapuza la posición, arreglarlo*/
+/* El problema es que pilla la posicion en base al banner creo*/
+#profileOptions {
+
+    position: relative;
+    height: 180px;
+    width: 180px;
+    max-height: 180px;
+    backdrop-filter: blur(4px); /* Aplica un desenfoque de 10 píxeles */
+    background-color: var(--fondo-botones);
+
+    right: -1650px;
+    top: 70px;
+
+    border: 2px solid var(--morado);
+        border-radius: var(--radio-bordes);
+
+    /* Cosas de flex*/
+    /* Tiene que ser none por defecto porque lo cambia javascript*/
+    display: none;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+
+    padding: 20px; /* Añade espacio entre el contenido y los bordes */
+
+    z-index: 2;
+
+    box-shadow: -2px 4px 10px rgba(0, 0, 0); /* Sombra suave */
+
+    overflow: hidden;
+    transition: max-height 0.5s ease-out; /* Duración de la animación */
+
+
+}
+
+#profileOptions p {
+
+    color: var(--amarillo);
+}
+
+
+/* Triangulo decorador de la ventana de opciones del perfil */
+
+#triangule {
+
+    display: none;
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    max-height: 15px;
+    background-color: var(--morado); /* Color de la flecha */
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Mascara que hace el triangulo */
+
+    top: 57px;
+    right: 57px;
+
+    z-index: 6;
+}
+
+/* Animación para expandir hacia abajo */
+@keyframes expandDown {
+
+    from {
+        height: 0;
+
+    }
+
+    to {
+        height: 180px;
+
+    }
+
+}
+
+/* Animación para desexpandir hacia arriba */
+@keyframes collapseUp {
+
+    from {
+
+        height: 180px;
+
+    }
+
+    to {
+        height: 0;
+
+    }
+    
+}
+
+#profileOptions.open {
+    animation: expandDown 0.4s ease-out forwards;
+}
+
+#profileOptions.closing {
+    animation: collapseUp 0.4s ease-in forwards;
+}
+
+.bx.bx-x {
+
+    position: absolute;
+    
+    color: #FF6347;
+    top: 2px;
+    right: 2px;
+
+    font-size: 28px;
+
+}
+
+
+/* Ventana de opciones del usuario */
+/* Sigue posicionando raro al reducir tamaño del marco, era por el top y demas creo */
+#profileOptionsFrame {
+
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    width: 430px;
+    height: 380px;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Corrige el centrado completo */
+
+
+    background-color: var(--fondo-botones);
+    backdrop-filter: blur(4px); /* Efecto de desenfoque */
+
+    border: 2px solid var(--morado);
+    border-radius: var(--radio-bordes);
+
+    padding: 15px;
+
+}
+
+/* Titulo del recuadro */
+#optionsTitle {
+
+    position: relative;
+    /* top: 1px; */
+    color: var(--amarillo); /* Color amarillo */
+
+    font-family: 'Orbitron';
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px;
+
+    margin: 0;
+
+    text-shadow: 
+        0 0 4px rgba(251, 192, 45, 0.2), /* Sombra de brillo más reducida */
+        0 0 6px rgba(251, 192, 45, 0.2), /* Resplandor suave */
+        0 0 10px rgba(251, 192, 45, 0.1); /* Resplandor más lejano, reducido */
+}
+
+#option1Title {
+
+    position: relative;
+    /* top: 18px; */
+    color: var(--azul_oscuro); /* Color amarillo */
+
+    font-family: 'Orbitron';
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    text-shadow: 
+        0 0 4px rgba(115, 140, 255, 0.2), /* Sombra de brillo azul oscuro */
+        0 0 6px rgba(115, 140, 255, 0.2), /* Resplandor suave */
+        0 0 10px rgba(115, 140, 255, 0.1); /* Resplandor lejano, más tenue */
+}
+
+#options1Group {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    /* top: -17px; */
+
+    gap: 10px;
+
+}
+
+#option2Title {
+
+    position: relative;
+    /* top: -12px; */
+    right: 40px;
+    color: var(--azul_oscuro); /* Color amarillo */
+
+    font-family: 'Orbitron';
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+
+    text-shadow: 
+        0 0 4px rgba(115, 140, 255, 0.2), /* Sombra de brillo azul oscuro */
+        0 0 6px rgba(115, 140, 255, 0.2), /* Resplandor suave */
+        0 0 10px rgba(115, 140, 255, 0.1); /* Resplandor lejano, más tenue */
+}
+
+#options2Group {
+
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+
+    width: 100%;
+    height: 100%;
+
+    /* top: -47px; */
+
+    gap: 10px;
+}
+
+
+#newUsername {
+
+    /*Forma*/
+    border: 2px solid var(--azul_claro);
+    border-radius: var(--radio-bordes);
+    background:transparent;
+
+        border-radius: var(--radio-bordes);
+    border: 2px solid var(--azul_claro);
+
+
+    text-align: left;
+    margin-left:30px;
+    
+}
+
+#newUsername:focus, #actualPassword:focus {    
+    outline: 2px solid var(--amarillo);
+    /* Cambia el color del borde al enfocar */    
+    caret-color: var(--morado);
+}
+
+#newUsername, #actualPassword {
+
+    /*Forma*/
+    border: 2px solid var(--azul_claro);
+    background:transparent;
+    color: var(--amarillo);
+    font-size: 15px; /* Cambia el tamaño del texto */
+
+    /*Bordes*/
+        border-radius: var(--radio-bordes);
+    width: 80%;
+    padding: 12px;
+    text-align: left;
+    margin-left:30px;
+}
+
+#newUsername:focus, #actualPassword:focus {    
+    outline: 2px solid var(--amarillo);
+    /* Cambia el color del borde al enfocar */    
+    caret-color: var(--morado);
+}
+
+#newUsername::placeholder, #actualPassword::placeholder {
+    font-family: Poppins;
+    color: var(--azul_oscuro);
+    
+    /*Efecto de letras con borde blanco*/
+    text-shadow: 0.2px 0.2px 0.2px white; /* Simula un borde blanco */
+}
+
+/* Boton de confirmar el cambio de nombre de usuario */
+#buttonConfirmUsername {
+
+    border: 2px solid var(--azul_claro);
+    border-radius: var(--radio-bordes);
+    
+    background-color: transparent;
+
+
+    color: var(--verde);
+
+    padding: 5px;
+
+    /* Efecto de sombra para el boton*/
+
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6); /* Sombra más difusa */
+
+    /* Para la animación */
+
+    transition: transform 0.1s ease; /* Suavidad al hacer clic */
+
+
+}
+
+/* Efecto con pseudoelemento de hacer click y mantener pulsado el boton */
+
+#buttonConfirmUsername:active {
+
+
+    transform: var(--press-effect);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6); /* Sombra más difusa */
+
+}
+
+#buttonConfirmUsername:hover {
+
+    outline: 1px solid var(--amarillo); /* Línea de contorno de 2px en rojo */
+
+}
+
+/* Boton de cambiar el cambio de contraseña*/
+
+/* Boton de confirmar el cambio de nombre de usuario */
+#buttonConfirmPassword {
+
+    border: 2px solid var(--azul_claro);
+    border-radius: var(--radio-bordes);
+    
+    background-color: transparent;
+
+
+    color: var(--verde);
+
+    padding: 5px;
+
+    /* Efecto de sombra para el boton*/
+
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.6); /* Sombra más difusa */
+
+    /* Para la animación */
+
+    transition: transform 0.1s ease; /* Suavidad al hacer clic */
+
+
+}
+
+/* Efecto con pseudoelemento de hacer click y mantener pulsado el boton */
+
+#buttonConfirmPassword:active {
+
+
+    transform: var(--press-effect);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.6); /* Sombra más difusa */
+
+}
+
+#buttonConfirmPassword:hover {
+
+    outline: 1px solid var(--amarillo); /* Línea de contorno de 2px en rojo */
+
+}
+
+/* Otras cosas */
+

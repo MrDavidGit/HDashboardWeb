@@ -1,0 +1,180 @@
+
+/*VARIABLES*/
+:root {
+
+    --morado: #AD7DC9;
+    --azul_claro: #8FD3F4;
+    --azul_oscuro: #738CFF;
+    --amarillo: #fbc02d;
+
+  }
+  
+  
+  
+body {
+    background: url('assets/login_background.jpg') no-repeat;  /* Coloca la ruta de la imagen */
+    background-size: cover;    /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen */
+    min-height: 100vh;
+    margin: 0;
+}
+
+#main {
+    background-color: rgba(255, 255, 255, 0.2);
+    
+    backdrop-filter: blur(5px);  /* Efecto de desenfoque en el fondo */
+
+    width: 45vh;
+    height: 35vh;
+    /*border-radius: 50px;*/
+
+    /*Posiciones*/
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start; /* Empezar la alineación desde arriba */
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+
+    /* Borde */
+    border: 2px solid var(--morado);
+    border-radius: 15px;
+
+    
+}
+
+#Title {
+    text-align: center;
+    width: 100%;
+    font-weight: 700;
+    color: white;
+    font-family: sans-serif;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);  /* Efecto de sombra difuminada */
+    margin-top: 35px;
+
+    
+}
+
+#User {
+
+
+
+    /*Forma*/
+    border: 2px solid var(--azul_claro);
+    background:transparent;
+
+    /*Espacios*/
+    margin-top: 20px;
+    margin-bottom: 30px;
+    
+}
+
+#User::placeholder, #Password::placeholder {
+    font-family:Poppins;
+    color: var(--azul_oscuro);
+    
+    /*Efecto de letras con borde blanco*/
+    text-shadow: 0.2px 0.2px 0.2px white; /* Simula un borde blanco */
+}
+
+  
+
+#Password {
+
+
+    /*Espacios*/
+    margin-bottom: 30px;
+    width: 80%; /* Estableces el ancho del botón */
+
+}
+
+#User, #Password {
+
+        /*Forma*/
+        background:transparent;
+        color: var(--amarillo);
+        font-size: 15px; /* Cambia el tamaño del texto */
+
+}
+
+#User, #Password, #Login {
+
+    /*Bordes*/
+
+    border-radius: 15px;
+    border: 2px solid var(--azul_claro);
+
+
+    width: 80%;
+    padding: 12px;
+    text-align: left;
+    margin-left:30px;
+
+ }
+
+#User:focus, #Password:focus {    
+    outline: 2px solid var(--amarillo);
+    /* Cambia el color del borde al enfocar */    
+    caret-color: var(--morado);
+    
+}
+ 
+#Login {
+
+
+    margin-top: 10px;
+    border: var(--azul_claro);
+    padding: 14px;
+    margin-left: 45px;
+    font-family: Poppins;
+    text-align: center;
+    transition: all 0.3s ease;    
+    font-weight: bold; /* Pone el texto en negrita */
+    font-size: 15px; /* Cambia el tamaño del texto */
+
+}
+
+#Login:hover{
+
+    color: var(--morado); /* Cambia el color del texto a blanco */
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.2); /* Añade una sombra para darle profundidad */
+    transform: translateY(-3px); /* Hace que el botón parezca flotar hacia arriba */
+}
+
+i.bxs-user {
+
+    position: absolute;
+    right: 60px;  /* Ajusta la posición del icono */
+    top: 42%;
+    transform: translateY(-50%);  /* Centra verticalmente el icono */
+    font-size: 20px;  /* Ajusta el tamaño del icono */
+    color: black;
+
+}
+
+i.bxs-lock-alt {
+
+    position: absolute;
+    right: 60px;  /* Ajusta la posición del icono */
+    top: 63%;
+    transform: translateY(-50%);  /* Centra verticalmente el icono */
+    font-size: 20px;  /* Ajusta el tamaño del icono */
+    color: black;
+}
+
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(4px); }
+    50% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+    100% { transform: translateX(0); }
+}
+
+.shake {
+    animation: shake 200ms;
+}
